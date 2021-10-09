@@ -13,6 +13,7 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.TutorialGroup;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -93,6 +94,21 @@ public class ParserUtil {
             throw new ParseException(Email.MESSAGE_CONSTRAINTS);
         }
         return new Email(trimmedEmail);
+    }
+
+    /**
+     * Parses a {@code String tutorialGroup} into an {@code TutorialGroup}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code tutorialGroup} is invalid.
+     */
+    public static TutorialGroup parseTutorialGroup(String tutorialGroup) throws ParseException {
+        requireNonNull(tutorialGroup);
+        String trimmedTutorialGroup = tutorialGroup.trim();
+        if (!TutorialGroup.isValidTutorialGroup(trimmedTutorialGroup)) {
+            throw new ParseException(TutorialGroup.MESSAGE_CONSTRAINTS);
+        }
+        return new TutorialGroup(trimmedTutorialGroup);
     }
 
     /**

@@ -22,17 +22,20 @@ public class Person {
 
     // Data fields
     private final Nationality nationality;
+    private final TutorialGroup tutorialGroup;
     private final Set<Tag> tags = new HashSet<>();
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Nationality nationality, Set<Tag> tags) {
-        requireAllNonNull(name, phone, email, nationality, tags);
+    public Person(Name name, Phone phone, Email email, Nationality nationality,
+                  TutorialGroup tutorialGroup, Set<Tag> tags) {
+        requireAllNonNull(name, phone, email, nationality, tutorialGroup, tags);
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.nationality = nationality;
+        this.tutorialGroup = tutorialGroup;
         this.tags.addAll(tags);
     }
 
@@ -50,6 +53,10 @@ public class Person {
 
     public Nationality getNationality() {
         return nationality;
+    }
+
+    public TutorialGroup getTutorialGroup() {
+        return tutorialGroup;
     }
 
     /**
@@ -92,13 +99,14 @@ public class Person {
                 && otherPerson.getPhone().equals(getPhone())
                 && otherPerson.getEmail().equals(getEmail())
                 && otherPerson.getNationality().equals(getNationality())
+                && otherPerson.getTutorialGroup().equals(getTutorialGroup())
                 && otherPerson.getTags().equals(getTags());
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, nationality, tags);
+        return Objects.hash(name, phone, email, nationality, tutorialGroup, tags);
     }
 
     @Override
@@ -110,7 +118,9 @@ public class Person {
                 .append("; Email: ")
                 .append(getEmail())
                 .append("; Nationality: ")
-                .append(getNationality());
+                .append(getNationality())
+                .append("; Tutorial Group: ")
+                .append(getTutorialGroup());
 
         Set<Tag> tags = getTags();
         if (!tags.isEmpty()) {

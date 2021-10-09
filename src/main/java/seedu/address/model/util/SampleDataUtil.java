@@ -11,6 +11,7 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.TutorialGroup;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -20,22 +21,22 @@ public class SampleDataUtil {
     public static Person[] getSamplePersons() {
         return new Person[] {
             new Person(new Name("Alex Yeoh"), new Phone("87438807"), new Email("alexyeoh@example.com"),
-                new Nationality("China"),
+                new Nationality("China"), new TutorialGroup("09"),
                 getTagSet("friends")),
             new Person(new Name("Bernice Yu"), new Phone("99272758"), new Email("berniceyu@example.com"),
-                new Nationality("Indonesia"),
+                new Nationality("Indonesia"), new TutorialGroup("10"),
                 getTagSet("colleagues", "friends")),
             new Person(new Name("Charlotte Oliveiro"), new Phone("93210283"), new Email("charlotte@example.com"),
-                new Nationality("Malaysia"),
+                new Nationality("Malaysia"), new TutorialGroup("28"),
                 getTagSet("neighbours")),
             new Person(new Name("David Li"), new Phone("91031282"), new Email("lidavid@example.com"),
-                new Nationality("Singapore"),
+                new Nationality("Singapore"), new TutorialGroup("02"),
                 getTagSet("family")),
             new Person(new Name("Irfan Ibrahim"), new Phone("92492021"), new Email("irfan@example.com"),
-                new Nationality("Singapore"),
+                new Nationality("Singapore"), new TutorialGroup("01"),
                 getTagSet("classmates")),
             new Person(new Name("Roy Balakrishnan"), new Phone("92624417"), new Email("royb@example.com"),
-                new Nationality("Korea"),
+                new Nationality("Korea"), new TutorialGroup("07"),
                 getTagSet("colleagues"))
         };
     }

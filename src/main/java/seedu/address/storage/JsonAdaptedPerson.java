@@ -15,6 +15,7 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.TutorialGroup;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -28,6 +29,7 @@ class JsonAdaptedPerson {
     private final String phone;
     private final String email;
     private final String nationality;
+    private final String tutorialGroup;
     private final List<JsonAdaptedTag> tagged = new ArrayList<>();
 
     /**
@@ -36,11 +38,13 @@ class JsonAdaptedPerson {
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
             @JsonProperty("email") String email, @JsonProperty("nationality") String nationality,
+            @JsonProperty("tutorialGroup") String tutorialGroup,
             @JsonProperty("tagged") List<JsonAdaptedTag> tagged) {
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.nationality = nationality;
+        this.tutorialGroup = tutorialGroup;
         if (tagged != null) {
             this.tagged.addAll(tagged);
         }
@@ -54,6 +58,7 @@ class JsonAdaptedPerson {
         phone = source.getPhone().value;
         email = source.getEmail().value;
         nationality = source.getNationality().value;
+        tutorialGroup = source.getTutorialGroup().value;
         tagged.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
@@ -103,8 +108,17 @@ class JsonAdaptedPerson {
         }
         final Nationality modelNationality = new Nationality(nationality);
 
+        if (tutorialGroup == null) {
+            throw new IllegalValueException(
+                    String.format(MISSING_FIELD_MESSAGE_FORMAT, TutorialGroup.class.getSimpleName()));
+        }
+        if (!TutorialGroup.isValidTutorialGroup(tutorialGroup)) {
+            throw new IllegalValueException(TutorialGroup.MESSAGE_CONSTRAINTS);
+        }
+        final TutorialGroup modelTutorialGroup = new TutorialGroup(tutorialGroup);
+
         final Set<Tag> modelTags = new HashSet<>(personTags);
-        return new Person(modelName, modelPhone, modelEmail, modelNationality, modelTags);
+        return new Person(modelName, modelPhone, modelEmail, modelNationality, modelTutorialGroup, modelTags);
     }
 
 }

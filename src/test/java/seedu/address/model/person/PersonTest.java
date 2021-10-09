@@ -7,6 +7,7 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NATIONALITY_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TUTORIAL_GROUP_BOB;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalPersons.ALICE;
 import static seedu.address.testutil.TypicalPersons.BOB;
@@ -33,7 +34,8 @@ public class PersonTest {
 
         // same name, all other attributes different -> returns true
         Person editedAlice = new PersonBuilder(ALICE).withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_BOB)
-                .withNationality(VALID_NATIONALITY_BOB).withTags(VALID_TAG_HUSBAND).build();
+                .withNationality(VALID_NATIONALITY_BOB).withTutorialGroup(VALID_TUTORIAL_GROUP_BOB)
+                .withTags(VALID_TAG_HUSBAND).build();
         assertTrue(ALICE.isSamePerson(editedAlice));
 
         // different name, all other attributes same -> returns false
@@ -82,6 +84,10 @@ public class PersonTest {
 
         // different nationality -> returns false
         editedAlice = new PersonBuilder(ALICE).withNationality(VALID_NATIONALITY_BOB).build();
+        assertFalse(ALICE.equals(editedAlice));
+
+        // different tutorial group -> returns false
+        editedAlice = new PersonBuilder(ALICE).withTutorialGroup(VALID_TUTORIAL_GROUP_BOB).build();
         assertFalse(ALICE.equals(editedAlice));
 
         // different tags -> returns false

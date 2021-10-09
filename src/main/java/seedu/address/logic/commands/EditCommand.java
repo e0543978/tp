@@ -6,6 +6,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NATIONALITY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL_GROUP;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.Collections;
@@ -24,6 +25,7 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.TutorialGroup;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -41,6 +43,7 @@ public class EditCommand extends Command {
             + "[" + PREFIX_PHONE + "PHONE] "
             + "[" + PREFIX_EMAIL + "EMAIL] "
             + "[" + PREFIX_NATIONALITY + "NATIONALITY] "
+            + "[" + PREFIX_TUTORIAL_GROUP + "TUTORIAL GROUP] "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_PHONE + "91234567 "
@@ -97,9 +100,12 @@ public class EditCommand extends Command {
         Phone updatedPhone = editPersonDescriptor.getPhone().orElse(personToEdit.getPhone());
         Email updatedEmail = editPersonDescriptor.getEmail().orElse(personToEdit.getEmail());
         Nationality updatedNationality = editPersonDescriptor.getNationality().orElse(personToEdit.getNationality());
+        TutorialGroup updatedTutorialGroup = editPersonDescriptor.getTutorialGroup()
+                .orElse(personToEdit.getTutorialGroup());
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
 
-        return new Person(updatedName, updatedPhone, updatedEmail, updatedNationality, updatedTags);
+        return new Person(updatedName, updatedPhone, updatedEmail, updatedNationality,
+                updatedTutorialGroup, updatedTags);
     }
 
     @Override
@@ -129,6 +135,7 @@ public class EditCommand extends Command {
         private Phone phone;
         private Email email;
         private Nationality nationality;
+        private TutorialGroup tutorialGroup;
         private Set<Tag> tags;
 
         public EditPersonDescriptor() {}
@@ -142,6 +149,7 @@ public class EditCommand extends Command {
             setPhone(toCopy.phone);
             setEmail(toCopy.email);
             setNationality(toCopy.nationality);
+            setTutorialGroup(toCopy.tutorialGroup);
             setTags(toCopy.tags);
         }
 
@@ -149,7 +157,7 @@ public class EditCommand extends Command {
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, phone, email, nationality, tags);
+            return CollectionUtil.isAnyNonNull(name, phone, email, nationality, tutorialGroup, tags);
         }
 
         public void setName(Name name) {
@@ -182,6 +190,14 @@ public class EditCommand extends Command {
 
         public Optional<Nationality> getNationality() {
             return Optional.ofNullable(nationality);
+        }
+
+        public void setTutorialGroup(TutorialGroup tutorialGroup) {
+            this.tutorialGroup = tutorialGroup;
+        }
+
+        public Optional<TutorialGroup> getTutorialGroup() {
+            return Optional.ofNullable(tutorialGroup);
         }
 
         /**
@@ -220,6 +236,7 @@ public class EditCommand extends Command {
                     && getPhone().equals(e.getPhone())
                     && getEmail().equals(e.getEmail())
                     && getNationality().equals(e.getNationality())
+                    && getTutorialGroup().equals(e.getTutorialGroup())
                     && getTags().equals(e.getTags());
         }
     }

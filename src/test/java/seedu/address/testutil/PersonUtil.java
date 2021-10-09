@@ -5,6 +5,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NATIONALITY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL_GROUP;
 
 import java.util.Set;
 
@@ -34,6 +35,7 @@ public class PersonUtil {
         sb.append(PREFIX_PHONE + person.getPhone().value + " ");
         sb.append(PREFIX_EMAIL + person.getEmail().value + " ");
         sb.append(PREFIX_NATIONALITY + person.getNationality().value + " ");
+        sb.append(PREFIX_TUTORIAL_GROUP + person.getTutorialGroup().value + " ");
         person.getTags().stream().forEach(
             s -> sb.append(PREFIX_TAG + s.tagName + " ")
         );
@@ -50,6 +52,8 @@ public class PersonUtil {
         descriptor.getEmail().ifPresent(email -> sb.append(PREFIX_EMAIL).append(email.value).append(" "));
         descriptor.getNationality().ifPresent(nationality -> sb.append(PREFIX_NATIONALITY)
                 .append(nationality.value).append(" "));
+        descriptor.getTutorialGroup().ifPresent(tutorialGroup -> sb.append(PREFIX_TUTORIAL_GROUP)
+                .append(tutorialGroup.value).append(" "));
         if (descriptor.getTags().isPresent()) {
             Set<Tag> tags = descriptor.getTags().get();
             if (tags.isEmpty()) {
