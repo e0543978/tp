@@ -6,6 +6,7 @@
     "email" : "alice@example.com",
     "nationality": "Singapore ",
     "tutorialGroup": "09",
+    "socialHandle": "@alicep",
     "tagged" : [ "friends" ]
   }, {
     "name" : "Benson Meier",
@@ -13,6 +14,7 @@
     "email" : "johnd@example.com",
     "nationality": "China ",
     "tutorialGroup": "08",
+    "socialHandle": "@bensonm",
     "tagged" : [ "owesMoney", "friends" ]
   }, {
     "name" : "Carl Kurz",
@@ -20,6 +22,7 @@
     "email" : "heinz@example.com",
     "nationality": "Malaysia ",
     "tutorialGroup": "05",
+    "socialHandle": "@carlk",
     "tagged" : [ ]
   }, {
     "name" : "Daniel Meier",
@@ -27,6 +30,7 @@
     "email" : "cornelia@example.com",
     "nationality": "Thailand ",
     "tutorialGroup": "09",
+    "socialHandle": "@danielm",
     "tagged" : [ "friends" ]
   }, {
     "name" : "Elle Meyer",
@@ -34,6 +38,7 @@
     "email" : "werner@example.com",
     "nationality": "USA ",
     "tutorialGroup": "29",
+    "socialHandle": "@ellem",
     "tagged" : [ ]
   }, {
     "name" : "Fiona Kunz",
@@ -41,6 +46,7 @@
     "email" : "lydia@example.com",
     "nationality": "Australia ",
     "tutorialGroup": "19",
+    "socialHandle": "@fionak",
     "tagged" : [ ]
   }, {
     "name" : "George Best",
@@ -48,6 +54,7 @@
     "email" : "anna@example.com",
     "nationality": "Vietnam ",
     "tutorialGroup": "28",
+    "socialHandle": "@georgeb",
     "tagged" : [ ]
   } ]
 }

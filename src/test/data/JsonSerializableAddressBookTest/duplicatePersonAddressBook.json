@@ -5,12 +5,14 @@
     "email": "alice@example.com",
     "nationality": "Singapore ",
     "tutorialGroup": "09",
+    "socialHandle": "@valid",
     "tagged": [ "friends" ]
   }, {
     "name": "Alice Pauline",
     "phone": "94351253",
     "email": "pauline@example.com",
     "nationality": "Singapore ",
-    "tutorialGroup": "09"
+    "tutorialGroup": "09",
+    "socialHandle": "@valid"
   } ]
 }

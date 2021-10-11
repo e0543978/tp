@@ -41,6 +41,8 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label tutorialGroup;
     @FXML
+    private Label socialHandle;
+    @FXML
     private FlowPane tags;
 
     /**
@@ -55,6 +57,7 @@ public class PersonCard extends UiPart<Region> {
         nationality.setText(person.getNationality().value);
         email.setText(person.getEmail().value);
         tutorialGroup.setText(person.getTutorialGroup().value);
+        socialHandle.setText(person.getSocialHandle().value);
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));

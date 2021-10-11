@@ -6,6 +6,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NATIONALITY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_HANDLE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL_GROUP;
 import static seedu.address.testutil.Assert.assertThrows;
@@ -37,6 +38,8 @@ public class CommandTestUtil {
     public static final String VALID_NATIONALITY_BOB = "Malaysia";
     public static final String VALID_TUTORIAL_GROUP_AMY = "09";
     public static final String VALID_TUTORIAL_GROUP_BOB = "28";
+    public static final String VALID_SOCIAL_HANDLE_AMY = "@amyb";
+    public static final String VALID_SOCIAL_HANDLE_BOB = "@bobc";
     public static final String VALID_TAG_HUSBAND = "husband";
     public static final String VALID_TAG_FRIEND = "friend";
 
@@ -50,6 +53,8 @@ public class CommandTestUtil {
     public static final String NATIONALITY_DESC_BOB = " " + PREFIX_NATIONALITY + VALID_NATIONALITY_BOB;
     public static final String TUTORIAL_GROUP_DESC_AMY = " " + PREFIX_TUTORIAL_GROUP + VALID_TUTORIAL_GROUP_AMY;
     public static final String TUTORIAL_GROUP_DESC_BOB = " " + PREFIX_TUTORIAL_GROUP + VALID_TUTORIAL_GROUP_BOB;
+    public static final String SOCIAL_HANDLE_DESC_AMY = " " + PREFIX_SOCIAL_HANDLE + VALID_SOCIAL_HANDLE_AMY;
+    public static final String SOCIAL_HANDLE_DESC_BOB = " " + PREFIX_SOCIAL_HANDLE + VALID_SOCIAL_HANDLE_BOB;
     public static final String TAG_DESC_FRIEND = " " + PREFIX_TAG + VALID_TAG_FRIEND;
     public static final String TAG_DESC_HUSBAND = " " + PREFIX_TAG + VALID_TAG_HUSBAND;
 
@@ -60,6 +65,8 @@ public class CommandTestUtil {
             + PREFIX_NATIONALITY; // empty string not allowed for nationality
     public static final String INVALID_TUTORIAL_GROUP_DESC = " "
             + PREFIX_TUTORIAL_GROUP + "B"; // 'B' not allowed in tutorial groups
+    public static final String INVALID_SOCIAL_HANDLE_DESC = " "
+            + PREFIX_SOCIAL_HANDLE + "@fef fef"; // space not allowed in social handle
     public static final String INVALID_TAG_DESC = " " + PREFIX_TAG + "hubby*"; // '*' not allowed in tags
 
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";
@@ -71,10 +78,12 @@ public class CommandTestUtil {
     static {
         DESC_AMY = new EditPersonDescriptorBuilder().withName(VALID_NAME_AMY)
                 .withPhone(VALID_PHONE_AMY).withEmail(VALID_EMAIL_AMY).withNationality(VALID_NATIONALITY_AMY)
-                .withTutorialGroup(VALID_TUTORIAL_GROUP_AMY).withTags(VALID_TAG_FRIEND).build();
+                .withTutorialGroup(VALID_TUTORIAL_GROUP_AMY).withSocialHandle(VALID_SOCIAL_HANDLE_AMY)
+                .withTags(VALID_TAG_FRIEND).build();
         DESC_BOB = new EditPersonDescriptorBuilder().withName(VALID_NAME_BOB)
                 .withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_BOB).withNationality(VALID_NATIONALITY_BOB)
-                .withTutorialGroup(VALID_TUTORIAL_GROUP_BOB).withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build();
+                .withTutorialGroup(VALID_TUTORIAL_GROUP_BOB).withSocialHandle(VALID_SOCIAL_HANDLE_BOB)
+                .withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build();
     }
 
     /**

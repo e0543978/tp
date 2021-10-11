@@ -1,16 +1,31 @@
 ---
-layout: page title: User Guide
+layout: page 
+title: User Guide
 ---
 
 Socius is a **desktop app for managing CS2103T tutorial classmates’ contacts for international students, optimized for
 use via a Command Line Interface (CLI)** while still having the benefits of a Graphical User Interface (GUI). If you can
 type fast, Socius can get your contact management tasks done faster than traditional GUI apps.
 
-* Table of Contents {:toc}
+* Table of Contents
+    1. Quick Start
+    2. Features
+       1. Viewing help `help`
+       2. Adding a person `add`
+       3. Listing all persons `list`
+       4. Editing a person `edit`
+       5. Locating persons by name `find`
+       6. Deleting a person `delete`
+       7. Clearing all entries `clear`
+       8. Exiting the program `exit`
+       9. Saving the data
+       10. Editing the data file
+    3. FAQ
+    4. Command Summary
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Quick start
+## Quick Start
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
@@ -191,7 +206,7 @@ the data of your previous Socius home folder.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Command summary
+## Command Summary
 
 |Action | Format | Examples|
 |--------|------------------|------------------------------------|

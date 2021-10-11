@@ -4,6 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NATIONALITY;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_HANDLE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL_GROUP;
 
@@ -24,12 +25,14 @@ public class AddCommand extends Command {
             + PREFIX_EMAIL + "EMAIL "
             + PREFIX_NATIONALITY + "NATIONALITY "
             + PREFIX_TUTORIAL_GROUP + "TUTORIAL GROUP "
+            + PREFIX_SOCIAL_HANDLE + "SOCIAL HANDLE "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " "
             + PREFIX_NAME + "John Doe "
             + PREFIX_EMAIL + "johnd@example.com "
             + PREFIX_NATIONALITY + "Singapore "
             + PREFIX_TUTORIAL_GROUP + "09 "
+            + PREFIX_SOCIAL_HANDLE + "@johnd "
             + PREFIX_TAG + "friends "
             + PREFIX_TAG + "owesMoney";
 

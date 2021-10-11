@@ -5,6 +5,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NATIONALITY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_SOCIAL_HANDLE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TUTORIAL_GROUP;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
@@ -25,6 +26,7 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.SocialHandle;
 import seedu.address.model.person.TutorialGroup;
 import seedu.address.model.tag.Tag;
 
@@ -44,6 +46,7 @@ public class EditCommand extends Command {
             + "[" + PREFIX_EMAIL + "EMAIL] "
             + "[" + PREFIX_NATIONALITY + "NATIONALITY] "
             + "[" + PREFIX_TUTORIAL_GROUP + "TUTORIAL GROUP] "
+            + "[" + PREFIX_SOCIAL_HANDLE + "SOCIAL HANDLE] "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_PHONE + "91234567 "
@@ -102,10 +105,12 @@ public class EditCommand extends Command {
         Nationality updatedNationality = editPersonDescriptor.getNationality().orElse(personToEdit.getNationality());
         TutorialGroup updatedTutorialGroup = editPersonDescriptor.getTutorialGroup()
                 .orElse(personToEdit.getTutorialGroup());
+        SocialHandle updatedSocialHandle = editPersonDescriptor.getSocialHandle()
+                .orElse(personToEdit.getSocialHandle());
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
 
         return new Person(updatedName, updatedPhone, updatedEmail, updatedNationality,
-                updatedTutorialGroup, updatedTags);
+                updatedTutorialGroup, updatedSocialHandle, updatedTags);
     }
 
     @Override
@@ -136,6 +141,7 @@ public class EditCommand extends Command {
         private Email email;
         private Nationality nationality;
         private TutorialGroup tutorialGroup;
+        private SocialHandle socialHandle;
         private Set<Tag> tags;
 
         public EditPersonDescriptor() {}
@@ -150,6 +156,7 @@ public class EditCommand extends Command {
             setEmail(toCopy.email);
             setNationality(toCopy.nationality);
             setTutorialGroup(toCopy.tutorialGroup);
+            setSocialHandle(toCopy.socialHandle);
             setTags(toCopy.tags);
         }
 
@@ -157,7 +164,7 @@ public class EditCommand extends Command {
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, phone, email, nationality, tutorialGroup, tags);
+            return CollectionUtil.isAnyNonNull(name, phone, email, nationality, tutorialGroup, socialHandle, tags);
         }
 
         public void setName(Name name) {
@@ -200,6 +207,14 @@ public class EditCommand extends Command {
             return Optional.ofNullable(tutorialGroup);
         }
 
+        public void setSocialHandle(SocialHandle socialHandle) {
+            this.socialHandle = socialHandle;
+        }
+
+        public Optional<SocialHandle> getSocialHandle() {
+            return Optional.ofNullable(socialHandle);
+        }
+
         /**
          * Sets {@code tags} to this object's {@code tags}.
          * A defensive copy of {@code tags} is used internally.
@@ -237,6 +252,7 @@ public class EditCommand extends Command {
                     && getEmail().equals(e.getEmail())
                     && getNationality().equals(e.getNationality())
                     && getTutorialGroup().equals(e.getTutorialGroup())
+                    && getSocialHandle().equals(e.getSocialHandle())
                     && getTags().equals(e.getTags());
         }
     }

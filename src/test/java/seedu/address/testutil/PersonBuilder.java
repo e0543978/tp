@@ -8,6 +8,7 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.SocialHandle;
 import seedu.address.model.person.TutorialGroup;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
@@ -22,12 +23,14 @@ public class PersonBuilder {
     public static final String DEFAULT_EMAIL = "amy@gmail.com";
     public static final String DEFAULT_NATIONALITY = "Singapore";
     public static final String DEFAULT_TUTORIAL_GROUP = "01";
+    public static final String DEFAULT_SOCIAL_HANDLE = "@amybee";
 
     private Name name;
     private Phone phone;
     private Email email;
     private Nationality nationality;
     private TutorialGroup tutorialGroup;
+    private SocialHandle socialHandle;
     private Set<Tag> tags;
 
     /**
@@ -39,6 +42,7 @@ public class PersonBuilder {
         email = new Email(DEFAULT_EMAIL);
         nationality = new Nationality(DEFAULT_NATIONALITY);
         tutorialGroup = new TutorialGroup(DEFAULT_TUTORIAL_GROUP);
+        socialHandle = new SocialHandle(DEFAULT_SOCIAL_HANDLE);
         tags = new HashSet<>();
     }
 
@@ -51,6 +55,7 @@ public class PersonBuilder {
         email = personToCopy.getEmail();
         nationality = personToCopy.getNationality();
         tutorialGroup = personToCopy.getTutorialGroup();
+        socialHandle = personToCopy.getSocialHandle();
         tags = new HashSet<>(personToCopy.getTags());
     }
 
@@ -63,7 +68,8 @@ public class PersonBuilder {
     }
 
     /**
-     * Parses the {@code tags} into a {@code Set<Tag>} and set it to the {@code Person} that we are building.
+     * Parses the {@code tags} into a {@code Set<Tag>}
+     * and set it to the {@code Person} that we are building.
      */
     public PersonBuilder withTags(String ... tags) {
         this.tags = SampleDataUtil.getTagSet(tags);
@@ -102,8 +108,20 @@ public class PersonBuilder {
         return this;
     }
 
+    /**
+     * Sets the {@code SocialHandle} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withSocialHandle(String socialHandle) {
+        this.socialHandle = new SocialHandle(socialHandle);
+        return this;
+    }
+
+    /**
+     * Returns a new {@code Person} that we are building.
+     */
     public Person build() {
-        return new Person(name, phone, email, nationality, tutorialGroup, tags);
+        return new Person(name, phone, email, nationality, tutorialGroup,
+                socialHandle, tags);
     }
 
 }

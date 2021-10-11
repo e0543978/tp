@@ -13,6 +13,7 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.SocialHandle;
 import seedu.address.model.person.TutorialGroup;
 import seedu.address.model.tag.Tag;
 
@@ -109,6 +110,21 @@ public class ParserUtil {
             throw new ParseException(TutorialGroup.MESSAGE_CONSTRAINTS);
         }
         return new TutorialGroup(trimmedTutorialGroup);
+    }
+
+    /**
+     * Parses a {@code String socialHandle} into an {@code SocialHandle}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code socialHandle} is invalid.
+     */
+    public static SocialHandle parseSocialHandle(String socialHandle) throws ParseException {
+        requireNonNull(socialHandle);
+        String trimmedSocialHandle = socialHandle.trim();
+        if (!SocialHandle.isValidSocialHandle(trimmedSocialHandle)) {
+            throw new ParseException(SocialHandle.MESSAGE_CONSTRAINTS);
+        }
+        return new SocialHandle(trimmedSocialHandle);
     }
 
     /**

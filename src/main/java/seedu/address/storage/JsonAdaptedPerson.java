@@ -15,6 +15,7 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.SocialHandle;
 import seedu.address.model.person.TutorialGroup;
 import seedu.address.model.tag.Tag;
 
@@ -30,6 +31,7 @@ class JsonAdaptedPerson {
     private final String email;
     private final String nationality;
     private final String tutorialGroup;
+    private final String socialHandle;
     private final List<JsonAdaptedTag> tagged = new ArrayList<>();
 
     /**
@@ -38,13 +40,14 @@ class JsonAdaptedPerson {
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
             @JsonProperty("email") String email, @JsonProperty("nationality") String nationality,
-            @JsonProperty("tutorialGroup") String tutorialGroup,
+            @JsonProperty("tutorialGroup") String tutorialGroup, @JsonProperty("socialHandle") String socialHandle,
             @JsonProperty("tagged") List<JsonAdaptedTag> tagged) {
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.nationality = nationality;
         this.tutorialGroup = tutorialGroup;
+        this.socialHandle = socialHandle;
         if (tagged != null) {
             this.tagged.addAll(tagged);
         }
@@ -59,6 +62,7 @@ class JsonAdaptedPerson {
         email = source.getEmail().value;
         nationality = source.getNationality().value;
         tutorialGroup = source.getTutorialGroup().value;
+        socialHandle = source.getSocialHandle().value;
         tagged.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
@@ -117,8 +121,18 @@ class JsonAdaptedPerson {
         }
         final TutorialGroup modelTutorialGroup = new TutorialGroup(tutorialGroup);
 
+        if (socialHandle == null) {
+            throw new IllegalValueException(
+                    String.format(MISSING_FIELD_MESSAGE_FORMAT, SocialHandle.class.getSimpleName()));
+        }
+        if (!SocialHandle.isValidSocialHandle(socialHandle)) {
+            throw new IllegalValueException(SocialHandle.MESSAGE_CONSTRAINTS);
+        }
+        final SocialHandle modelSocialHandle = new SocialHandle(socialHandle);
+
         final Set<Tag> modelTags = new HashSet<>(personTags);
-        return new Person(modelName, modelPhone, modelEmail, modelNationality, modelTutorialGroup, modelTags);
+        return new Person(modelName, modelPhone, modelEmail, modelNationality,
+                modelTutorialGroup, modelSocialHandle, modelTags);
     }
 
 }

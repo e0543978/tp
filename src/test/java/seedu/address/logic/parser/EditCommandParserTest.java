@@ -14,6 +14,8 @@ import static seedu.address.logic.commands.CommandTestUtil.NATIONALITY_DESC_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.NATIONALITY_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.PHONE_DESC_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.PHONE_DESC_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.SOCIAL_HANDLE_DESC_AMY;
+import static seedu.address.logic.commands.CommandTestUtil.SOCIAL_HANDLE_DESC_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_FRIEND;
 import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_HUSBAND;
 import static seedu.address.logic.commands.CommandTestUtil.TUTORIAL_GROUP_DESC_AMY;
@@ -24,6 +26,8 @@ import static seedu.address.logic.commands.CommandTestUtil.VALID_NATIONALITY_AMY
 import static seedu.address.logic.commands.CommandTestUtil.VALID_NATIONALITY_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_AMY;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_SOCIAL_HANDLE_AMY;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_SOCIAL_HANDLE_BOB;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_FRIEND;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TUTORIAL_GROUP_AMY;
@@ -120,11 +124,13 @@ public class EditCommandParserTest {
     public void parse_allFieldsSpecified_success() {
         Index targetIndex = INDEX_SECOND_PERSON;
         String userInput = targetIndex.getOneBased() + PHONE_DESC_BOB + TAG_DESC_HUSBAND
-                + EMAIL_DESC_AMY + NATIONALITY_DESC_AMY + NAME_DESC_AMY + TUTORIAL_GROUP_DESC_AMY + TAG_DESC_FRIEND;
+                + EMAIL_DESC_AMY + NATIONALITY_DESC_AMY + NAME_DESC_AMY + TUTORIAL_GROUP_DESC_AMY
+                + SOCIAL_HANDLE_DESC_AMY + TAG_DESC_FRIEND;
 
         EditPersonDescriptor descriptor = new EditPersonDescriptorBuilder().withName(VALID_NAME_AMY)
                 .withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_AMY).withNationality(VALID_NATIONALITY_AMY)
-                .withTutorialGroup(VALID_TUTORIAL_GROUP_AMY).withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build();
+                .withTutorialGroup(VALID_TUTORIAL_GROUP_AMY).withSocialHandle(VALID_SOCIAL_HANDLE_AMY)
+                .withTags(VALID_TAG_HUSBAND, VALID_TAG_FRIEND).build();
         EditCommand expectedCommand = new EditCommand(targetIndex, descriptor);
 
         assertParseSuccess(parser, userInput, expectedCommand);
@@ -175,6 +181,12 @@ public class EditCommandParserTest {
         expectedCommand = new EditCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
 
+        // social handle
+        userInput = targetIndex.getOneBased() + SOCIAL_HANDLE_DESC_AMY;
+        descriptor = new EditPersonDescriptorBuilder().withSocialHandle(VALID_SOCIAL_HANDLE_AMY).build();
+        expectedCommand = new EditCommand(targetIndex, descriptor);
+        assertParseSuccess(parser, userInput, expectedCommand);
+
         // tags
         userInput = targetIndex.getOneBased() + TAG_DESC_FRIEND;
         descriptor = new EditPersonDescriptorBuilder().withTags(VALID_TAG_FRIEND).build();
@@ -187,10 +199,12 @@ public class EditCommandParserTest {
         Index targetIndex = INDEX_FIRST_PERSON;
         String userInput = targetIndex.getOneBased() + PHONE_DESC_AMY + NATIONALITY_DESC_AMY + EMAIL_DESC_AMY
                 + TAG_DESC_FRIEND + PHONE_DESC_AMY + NATIONALITY_DESC_AMY + EMAIL_DESC_AMY + TAG_DESC_FRIEND
-                + PHONE_DESC_BOB + NATIONALITY_DESC_BOB + EMAIL_DESC_BOB + TAG_DESC_HUSBAND;
+                + PHONE_DESC_BOB + NATIONALITY_DESC_BOB + EMAIL_DESC_BOB + TAG_DESC_HUSBAND + SOCIAL_HANDLE_DESC_AMY
+                + SOCIAL_HANDLE_DESC_BOB;
 
         EditPersonDescriptor descriptor = new EditPersonDescriptorBuilder().withPhone(VALID_PHONE_BOB)
                 .withEmail(VALID_EMAIL_BOB).withNationality(VALID_NATIONALITY_BOB)
+                .withSocialHandle(VALID_SOCIAL_HANDLE_BOB)
                 .withTags(VALID_TAG_FRIEND, VALID_TAG_HUSBAND).build();
         EditCommand expectedCommand = new EditCommand(targetIndex, descriptor);
 
