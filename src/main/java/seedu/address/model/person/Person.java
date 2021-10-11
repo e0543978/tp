@@ -41,8 +41,9 @@ public class Person {
         this.tags.addAll(tags);
     }
 
-    /**THIS IS A TEMPORARY PLACEHOLDER CONSTRUCTOR.REMOVE THIS WHEN REMOVING PHONE PROPERTY. 
-     * 
+    /**
+     * THIS IS A TEMPORARY PLACEHOLDER CONSTRUCTOR.REMOVE THIS WHEN REMOVING PHONE PROPERTY.
+     *
      * @param name
      * @param email
      * @param nationality
