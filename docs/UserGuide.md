@@ -188,7 +188,7 @@ Format: **`help`**
 
 ### Adding a person: `add`
 
-If you want to add a new person into Socius, you can use the `add` command.
+You can add a new person into Socius with the `add` command.
 
 Format: **`add`** `n/NAME [p/PHONE_NUMBER] [e/EMAIL] [nat/NATIONALITY] [g/GENDER] [tg/TUTORIAL_GROUP] [s/SOCIAL_HANDLE]…​ [r/REMARK] [t/TAG]…​`
 
@@ -215,6 +215,7 @@ Examples:
 
 ### Adding tags: `addt`
 
+You can add a tag to either a single person or multiple persons with the `addt` command.<br>
 You can add tags to a person in the contact book by `INDEX`. Alternatively, you can add tags to everyone in the contact
 book by replacing `INDEX` with the word `all`.
 
@@ -254,7 +255,7 @@ For example:
 
 ### Adding remark to a person: `remark`
 
-You can add a remark to a person in the contact book by `INDEX`.
+You can add a remark to an existing person in the contact book by `INDEX`.
 
 Format: **`remark`** `INDEX r/VALUE`
 
@@ -321,7 +322,7 @@ Examples:
 
 ### Deleting a person: `delete`
 
-You can delete the specified person from the contact book by `INDEX`.
+You can delete an existing person from the contact book by `INDEX`.
 
 Format: **`delete`** `INDEX`
 
@@ -337,6 +338,7 @@ Examples:
 
 ### Deleting tags: `deletet`
 
+You can delete all existing tags of either a single person or multiple persons with the `deletet` command.<br>
 You can delete tags to a person in the contact book by `INDEX`. Alternatively, you can delete tags for everyone in the
 contact book by replacing `INDEX` with the word `all`.
 
@@ -360,7 +362,7 @@ Alternatively, **`deletet`** `all [t/TAG]…​`
 
 ### Deleting multiple person: `deletem`
 
-You can delete multiple person from the contact book using `KEYWORD`.
+You can delete multiple persons from the contact book using `KEYWORD`.
 
 Format: **`deletem`** `FIELD_PREFIX/KEYWORD [FIELD_PREFIX/KEYWORD]…​`
 
@@ -460,10 +462,10 @@ Format: **`find`** `FIELD_PREFIX/KEYWORD [FIELD_PREFIX/KEYWORD]…​`
 Examples:
 
 * **`find`** `n/Alex` returns `alex` and `Alexandra`.
-* **`find`** `n/jack tg/M12` returns `Jack` who are from tutorial group `M12`.<br>
+* **`find`** `n/jack tg/M12` returns `Jack` who are from tutorial group `M12`.
+* **`find`** `nat/Singaporean` returns all persons who are Singaporeans. <br>
   ![result for 'find n/jack tg/M12'](images/FindJack.png)
   *After execution of Find Command: **`find`** `n/jack tg/M12`*
-* **`find`** `nat/Singaporean` returns all persons who are Singaporeans. <br>
   ![result for 'find nat/Singaporean'](images/FindSingaporean.png)
   *After execution of Find Command: **`find`** `nat/Singaporean`*
 
@@ -554,8 +556,12 @@ to save manually. The data will be automatically loaded back into the applicatio
 
 ### Command History
 
-Use up/down arrow keys to navigate through command history. This is useful if the command you are going to type only
+Use up/down arrow keys to navigate through command history. 
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+This is useful if the command you are going to type only
 differs slightly from a command you have previously typed, or if you would like to revisit your previous commands.
+</div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -569,7 +575,7 @@ Example: `n/Zayden Tan Bee Hoon`
 
 ### `g/GENDER`
 
-`GENDER` can be `M` for male, `F` for female or `O` for others.
+`GENDER` should only be `M` for male, `F` for female or `O` for others.
 
 Examples: `g/M`, `g/f`
 
@@ -654,7 +660,7 @@ Example: `a/findAlex`
 
 ### `c/COMMAND`
 
-`COMMAND` must be a valid command.
+`COMMAND` should be a valid command.
 
 Example: `c/find n/Alex`
 
@@ -680,7 +686,9 @@ If the format of your data file is invalid, Socius will discard all data and sta
 
 | Word | Meaning |
 |--------|-------|
-|        |         |
+| Social Handle | Public username of a social media account |
+|        |       |
+
 
 --------------------------------------------------------------------------------------------------------------------
 
