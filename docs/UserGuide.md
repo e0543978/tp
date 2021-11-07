@@ -1,13 +1,15 @@
 ---
-layout: page
-title: User Guide
+layout: page title: User Guide
 ---
 
 # Welcome to Socius User Guide!
 
-Welcome to Socius User Guide! Choose a section from the table of contents below to find answers, step-by-step guides and know about Socius better!
+Welcome to the Socius User Guide! This User Guide hopes to get you familiarised with the
+commands of Socius and the flow of using the program, helping you to achieve maximum efficiency so that you can get the
+most out of it. Choose a section from the table of contents below to get to know Socius better!
 
-Are you a developer? Make sure to check out our Developer Guide too! You can find the Developer Guide [here](https://github.com/AY2122S1-CS2103T-W08-4/tp/blob/master/docs/DeveloperGuide.md).
+Are you a developer? Make sure to check out our Developer Guide too! You can find the Developer
+Guide [here](https://github.com/AY2122S1-CS2103T-W08-4/tp/blob/master/docs/DeveloperGuide.md).
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -17,69 +19,70 @@ Are you a developer? Make sure to check out our Developer Guide too! You can fin
 2. [Using this guide](#using-this-guide)
 3. [Quick start](#quick-start)
 4. [Features](#features)
-   1. [Viewing help `help`](#viewing-help-help)
-   2. [Modify](#adding-a-person-add)
-       1. [Adding a person `add`](#adding-a-person-add)
-       2. [Adding tags to persons `addt`](#adding-tags-addt)
-       3. [Adding a remark `remark`](#adding-remark-to-a-person-remark)
-       4. [Editing a person `edit`](#editing-a-person-edit)
-       5. [Deleting a person `delete`](#deleting-a-person-delete)
-       6. [Deleting multiple persons `deletem`](#deleting-multiple-person-deletem)
-       7. [Deleting tags from persons `deletet`](#deleting-tags-deletet)
-       8. [Clearing all persons `clear`](#clearing-all-persons-clear)
-   3. [View](#listing-all-persons-list)
-      1. [Listing all persons `list`](#listing-all-persons-list)
-      2. [Finding persons `find`](#finding-persons-find)
-      3. [Sorting persons `sort`](#sorting-all-persons-sort)
-      4. [Viewing statistics `stat`](#viewing-statistics-stat)
-   4. [Share](#importing-contacts-import)
-      1. [Importing contacts `import`](#importing-contacts-import)
-      2. [Exporting contacts `export`](#exporting-contacts-export)
-   5. [Advance](#aliasing-commands-alias)
-      1. [Aliasing commands `alias`](#aliasing-commands-alias)
-   6. [General](#exiting-the-program-exit)
-      1. [Exiting the program `exit`](#exiting-the-program-exit)
-      2. [Saving the data](#saving-the-data)
-      3. [Command History](#command-history)
+    1. [Viewing help `help`](#viewing-help-help)
+    2. [Modify](#adding-a-person-add)
+        1. [Adding a person `add`](#adding-a-person-add)
+        2. [Adding tags to persons `addt`](#adding-tags-addt)
+        3. [Adding a remark `remark`](#adding-remark-to-a-person-remark)
+        4. [Editing a person `edit`](#editing-a-person-edit)
+        5. [Deleting a person `delete`](#deleting-a-person-delete)
+        6. [Deleting multiple persons `deletem`](#deleting-multiple-person-deletem)
+        7. [Deleting tags from persons `deletet`](#deleting-tags-deletet)
+        8. [Clearing all persons `clear`](#clearing-all-persons-clear)
+    3. [View](#listing-all-persons-list)
+        1. [Listing all persons `list`](#listing-all-persons-list)
+        2. [Finding persons `find`](#finding-persons-find)
+        3. [Sorting persons `sort`](#sorting-all-persons-sort)
+        4. [Viewing statistics `stat`](#viewing-statistics-stat)
+    4. [Share](#importing-contacts-import)
+        1. [Importing contacts `import`](#importing-contacts-import)
+        2. [Exporting contacts `export`](#exporting-contacts-export)
+    5. [Advanced](#aliasing-commands-alias)
+        1. [Aliasing commands `alias`](#aliasing-commands-alias)
+    6. [General](#exiting-the-program-exit)
+        1. [Exiting the program `exit`](#exiting-the-program-exit)
+        2. [Saving the data](#saving-the-data)
+        3. [Command History](#command-history)
 5. [Parameter Constraints](#parameter-constraints)
-   1. [`n/NAME`](#nname)
-   2. [`g/GENDER`](#ggender)
-   3. [`p/PHONE_NUMBER`](#pphonenumber)
-   4. [`e/EMAIL`](#eemail)
-   5. [`nat/NATIONALITY`](#natnationality)
-   6. [`tg/TUTORIAL_GROUP`](#tgtutorialgroup)
-   7. [`s/SOCIAL_HANDLE`](#ssocialhandle)
-   8. [`s/SOCIAL_HANDLE_USERID`](#ssocialhandleuserid)
-   9. [`r/REMARK`](#rremark)
-   10. [`t/TAG`](#ttag)
-   11. [`a/ALIAS`](#aalias)
-   12. [`c/COMMAND`](#ccommand)
+    1. [`n/NAME`](#nname)
+    2. [`g/GENDER`](#ggender)
+    3. [`p/PHONE_NUMBER`](#pphonenumber)
+    4. [`e/EMAIL`](#eemail)
+    5. [`nat/NATIONALITY`](#natnationality)
+    6. [`tg/TUTORIAL_GROUP`](#tgtutorialgroup)
+    7. [`s/SOCIAL_HANDLE`](#ssocialhandle)
+    8. [`s/SOCIAL_HANDLE_USERID`](#ssocialhandleuserid)
+    9. [`r/REMARK`](#rremark)
+    10. [`t/TAG`](#ttag)
+    11. [`a/ALIAS`](#aalias)
+    12. [`c/COMMAND`](#ccommand)
 6. [FAQ](#faq)
 7. [Glossary](#glossary)
 8. [Authors](#authors)
 9. [Command Summary](#command-summary)
-   1. [General](#general)
-   2. [Modify](#modify)
-   3. [View](#view)
-   4. [Share](#share)
-   5. [Advance](#advance)
+    1. [General](#general)
+    2. [Modify](#modify)
+    3. [View](#view)
+    4. [Share](#share)
+    5. [Advanced](#advanced)
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Introduction to Socius
 
 Socius is a desktop application that can help you, as a CS2103T Software Engineering student, to
+
 * manage your classmates’ contacts
 * make friends and
 * find teammates!
 
-The Socius User Guide helps you get started with using Socius.
-This User Guide hopes to get you familarized with the commands of Socius and the flow of using the program, helping you to achieve maximum efficiency so that you can get the most out of it.
-If you already have experience with using Socius, a summary table is available at the end for quick reference!
+The Socius User Guide helps you get started with using Socius. If you already have experience with using Socius, a
+summary table is available at the end for quick reference!
 
 We hope that you will have a great time using Socius! :)
 
 Here are some main features Socius provides:
+
 * Access details of coursemates taking CS2103T.
 * Find any coursemate(s) with their name, tutorial group, nationalities, tags and more.
 * Tag coursemates with suitable tags to categorize them.
@@ -109,7 +112,8 @@ Before diving into Socius and getting to know its features, lets get familiar wi
 
 Here is a quick start on how you can start using our app in your own computer.
 
-1. Ensure you have [*Java 11*](https://www.oracle.com/sg/java/technologies/javase/jdk11-archive-downloads.html) installed in your Computer.
+1. Ensure you have [*Java 11*](https://www.oracle.com/sg/java/technologies/javase/jdk11-archive-downloads.html)
+   installed in your Computer.
 
 2. Download the latest `Socius.jar` on our [Releases](https://github.com/AY2122S1-CS2103T-W08-4/tp/releases) page.
 
@@ -121,13 +125,15 @@ Here is a quick start on how you can start using our app in your own computer.
 If double-click does not work, you can go to the terminal and type in `java -jar Socius.jar`. Ensure that the terminal is in the directory of the `Socius.jar` file.
 </div>
 
-   ![Ui](images/Quickstart.png)
+![Ui](images/Quickstart.png)
 
-* Note that the app comes with some sample data by default. Type **`clear`** in the command box to remove those sample data.
+* Note that the app comes with some sample data by default. Type **`clear`** in the command box to remove those sample
+  data.
 
-* Type the command in the command box and press `Enter` to execute it. e.g. typing **`help`** and pressing `Enter` will open the help window.
-Some example commands you can try:
-    * **`add`** `n/Amy Tan tg/W08 nat/Singaporean` : Adds a contact named `Amy Tan` to list, together with her tutorial group and nationality.
+* Type the command in the command box and press `Enter` to execute it. e.g. typing **`help`** and pressing `Enter` will
+  open the help window. Some example commands you can try:
+    * **`add`** `n/Amy Tan tg/W08 nat/Singaporean` : Adds a contact named `Amy Tan` to list, together with her tutorial
+      group and nationality.
 
     * **`delete`** `3` : Deletes the person at index 3 in the current list.
 
@@ -139,7 +145,8 @@ Some example commands you can try:
 
     * **`exit`** : Exits the app.
 
-* Refer to the next section on [Features](#features) for more details of each command. Alternatively, you can go to [Command Summary](#command-summary) for an overview of all commands.
+* Refer to the next section on [Features](#features) for more details of each command. Alternatively, you can go
+  to [Command Summary](#command-summary) for an overview of all commands.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -199,17 +206,20 @@ A person can have any number of tags (including 0) and social handles (including
 Examples:
 
 * **`add`** `n/Amy Tan` adds `Amy Tan` to the list.
-* **`add`** `n/Benedict p/98765432 e/ben@example.com g/M` adds `Benedict`  to the list together with his phone number, email and gender.
-* **`add`** `n/Ernest s/tg:ernest2334 s/ig:ernessst` adds `Ernest` to the list together with his Telegram and Instagram handles.
-![Add Command Example](images/AddEnerst.png)
-*After execution of Add Command: **`add`** `n/Ernest s/tg:ernest2334 s/ig:ernessst`*
+* **`add`** `n/Benedict p/98765432 e/ben@example.com g/M` adds `Benedict`  to the list together with his phone number,
+  email and gender.
+* **`add`** `n/Ernest s/tg:ernest2334 s/ig:ernessst` adds `Ernest` to the list together with his Telegram and Instagram
+  handles.
+  ![Add Command Example](images/AddEnerst.png)
+  *After execution of Add Command: **`add`** `n/Ernest s/tg:ernest2334 s/ig:ernessst`*
 
 ### Adding tags: `addt`
 
-You can add tags to a person in the contact book by `INDEX`. Alternatively, you can add tags to everyone in the
-contact book by replacing `INDEX` with the word `all`.
+You can add tags to a person in the contact book by `INDEX`. Alternatively, you can add tags to everyone in the contact
+book by replacing `INDEX` with the word `all`.
 
 Format: **`addt`** `INDEX t/TAG [t/TAG]…​`
+
 * Add tags to the person at the specified `INDEX`.
 * The index refers to the index number shown in the displayed person list.
 * Index must be provided and **must be a positive integer** 1, 2, 3, …​
@@ -220,10 +230,13 @@ Format: **`addt`** `INDEX t/TAG [t/TAG]…​`
 
 For example:
 
-* **`addt`** `1 t/friend` followed by **`find`** `g/f` adds the friend tag to the person at index 1 in the filtered list of female contacts.
-* **`addt`** `2 t/teammate t/neighbour` adds the teammate and neighbour tags to the person at index 2 in the displayed person list.
+* **`addt`** `1 t/friend` followed by **`find`** `g/f` adds the friend tag to the person at index 1 in the filtered list
+  of female contacts.
+* **`addt`** `2 t/teammate t/neighbour` adds the teammate and neighbour tags to the person at index 2 in the displayed
+  person list.
 
 Alternatively, **`addt`** `all t/TAG [t/TAG]…​`
+
 * Add tags to everybody in the list.
 * Input tag will be appended to the existing tag.
 * If duplicated tags are given, these tags will not be added.
@@ -232,29 +245,33 @@ Alternatively, **`addt`** `all t/TAG [t/TAG]…​`
 
 For example:
 
-* **`addt`** `all t/friend` followed by **`find`** `g/f` adds the friend tag to all persons in the filtered list of female contacts.
-* **`addt`** `all t/teammate t/neighbour` adds the teammate and neighbour tags to all persons in the displayed person list.
-![result for 'addt all t/teammate t/neighbour'](images/AddTagsToAll.png)
-*After execution of Add Tag Command: **`addt`** `all t/teammate t/neighbour`*
+* **`addt`** `all t/friend` followed by **`find`** `g/f` adds the friend tag to all persons in the filtered list of
+  female contacts.
+* **`addt`** `all t/teammate t/neighbour` adds the teammate and neighbour tags to all persons in the displayed person
+  list.
+  ![result for 'addt all t/teammate t/neighbour'](images/AddTagsToAll.png)
+  *After execution of Add Tag Command: **`addt`** `all t/teammate t/neighbour`*
 
 ### Adding remark to a person: `remark`
 
 You can add a remark to a person in the contact book by `INDEX`.
 
 Format: **`remark`** `INDEX r/VALUE`
+
 * Add a remark to the person at the specified `INDEX`.
 * The index refers to the index number shown in the displayed person list.
 * Index must be provided and **must be a positive integer** 1, 2, 3, …​
 * Existing remark will be updated to the input remark.
 * If duplicated remarks are given, only the latest one will be taken.
-* You can remove a person’s remark by typing `remark` (i.e. empty parameter) or `remark r/` without specifying any remark after it.
+* You can remove a person’s remark by typing `remark` (i.e. empty parameter) or `remark r/` without specifying any
+  remark after it.
 
 Examples:
 
 * **`remark`** `1 r/She likes coding` adds the remark `She likes coding` to the person at index 1.
 * **`remark`** `2` clears the remark of the person at index 2.
-![result for 'remark 2'](images/RemoveRemark.png)
-*After execution of Remark Command: **`remark`** `2`*
+  ![result for 'remark 2'](images/RemoveRemark.png)
+  *After execution of Remark Command: **`remark`** `2`*
 
 ### Editing a person: `edit`
 
@@ -263,15 +280,15 @@ You can edit an existing person in the contact book by `INDEX`.
 Format: **`edit`** `INDEX FIELD_PREFIX/VALUE [FIELD_PREFIX/VALUE]…​`
 
 * `FIELD_PREFIX/VALUE` can be any of the following:
-  * `n/NAME`
-  * `g/GENDER`
-  * `p/PHONE_NUMBER`
-  * `e/EMAIL`
-  * `nat/NATIONALITY`
-  * `tg/TUTORIAL_GROUP`
-  * `s/SOCIAL_HANDLE`
-  * `r/REMARK`
-  * `t/TAG`
+    * `n/NAME`
+    * `g/GENDER`
+    * `p/PHONE_NUMBER`
+    * `e/EMAIL`
+    * `nat/NATIONALITY`
+    * `tg/TUTORIAL_GROUP`
+    * `s/SOCIAL_HANDLE`
+    * `r/REMARK`
+    * `t/TAG`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 The [Parameter Constraints](#parameter-constraints) section shows the constaints for each parameter.
@@ -282,9 +299,10 @@ The [Parameter Constraints](#parameter-constraints) section shows the constaints
 * `INDEX` refers to the index number shown on the left of the name of a displayed person.
 * New input values will overwrite existing values.
 * To remove a field, simply leave the `VALUE` empty
-  * For `s/SOCIAL_HANDLE`, you can specify which social handle to remove by only leaving the `USERID` part empty (i.e. `s/PLATFORM:`)
+    * For `s/SOCIAL_HANDLE`, you can specify which social handle to remove by only leaving the `USERID` part empty (
+      i.e. `s/PLATFORM:`)
 * If duplicated fields are given, only the latest one will be taken
-  * This does not applies to `s/SOCIAL_HANDLE` and `t/TAG` as they can accept multiple values.
+    * This does not applies to `s/SOCIAL_HANDLE` and `t/TAG` as they can accept multiple values.
 * When editing tags, the existing tags of the person will be replaced (i.e adding of tags is not cumulative).
 * You can remove all the person’s tags by typing `t/` without specifying any tags after it.
 
@@ -295,9 +313,11 @@ Example: `t/friends:#FF0000` for a red colour tag
 
 Examples:
 
-* **`edit`** `1 p/91234567 e/amytan@example.com` edits the phone number and email address of the person at index 1 to be `91234567`
+* **`edit`** `1 p/91234567 e/amytan@example.com` edits the phone number and email address of the person at index 1 to
+  be `91234567`
   and `amytan@example.com` respectively.
-* **`edit`** `2 n/Benedict t/` edits the name of the person at index 2 to be `Benedict` and clears all his existing tags.
+* **`edit`** `2 n/Benedict t/` edits the name of the person at index 2 to be `Benedict` and clears all his existing
+  tags.
 
 ### Deleting a person: `delete`
 
@@ -312,13 +332,16 @@ Format: **`delete`** `INDEX`
 Examples:
 
 * **`list`** followed by **`delete`** `2` deletes the person at index 2 from the contact book.
-* **`find`** `n/benedict` followed by **`delete`** `1` deletes the person at index 1 from the results of the **`find`** command.
+* **`find`** `n/benedict` followed by **`delete`** `1` deletes the person at index 1 from the results of the **`find`**
+  command.
 
 ### Deleting tags: `deletet`
+
 You can delete tags to a person in the contact book by `INDEX`. Alternatively, you can delete tags for everyone in the
 contact book by replacing `INDEX` with the word `all`.
 
 Format: **`deletet`** `INDEX [t/TAG]…​`
+
 * Delete tags of the person at the specified `INDEX`.
 * The index refers to the index number shown in the displayed person list.
 * Index must be provided and **must be a positive integer** 1, 2, 3, …​
@@ -328,6 +351,7 @@ Format: **`deletet`** `INDEX [t/TAG]…​`
 * `TAG` is case-sensitive
 
 Alternatively, **`deletet`** `all [t/TAG]…​`
+
 * Delete tags of everybody in the list.
 * The tag refers to the tags to delete from everyone.
 * Existing tag will be removed if one of the input tags is the existing tag.
@@ -341,15 +365,15 @@ You can delete multiple person from the contact book using `KEYWORD`.
 Format: **`deletem`** `FIELD_PREFIX/KEYWORD [FIELD_PREFIX/KEYWORD]…​`
 
 * `FIELD_PREFIX/KEYWORD` can be any of the following:
-  * `n/NAME`
-  * `g/GENDER`
-  * `p/PHONE_NUMBER`
-  * `e/EMAIL`
-  * `nat/NATIONALITY`
-  * `tg/TUTORIAL_GROUP`
-  * `s/SOCIAL_HANDLE`
-  * `r/REMARK`
-  * `t/TAG`
+    * `n/NAME`
+    * `g/GENDER`
+    * `p/PHONE_NUMBER`
+    * `e/EMAIL`
+    * `nat/NATIONALITY`
+    * `tg/TUTORIAL_GROUP`
+    * `s/SOCIAL_HANDLE`
+    * `r/REMARK`
+    * `t/TAG`
 
 * At least one `KEYWORD` must be provided.
 * `KEYWORD` is case-insensitive. (e.g `hans` will match `Hans`)
@@ -358,14 +382,16 @@ Format: **`deletem`** `FIELD_PREFIX/KEYWORD [FIELD_PREFIX/KEYWORD]…​`
 Examples:
 
 * **`deletem`** `n/jia ling` deletes `Zhong Jia Ling` and `Oon Jia Ling`.
-![result for 'deletem n/jia ling'](images/DeleteJiaLing.png)
-*After execution of Delete Multiple Command: **`deletem`** `n/jia ling`*
+  ![result for 'deletem n/jia ling'](images/DeleteJiaLing.png)
+  *After execution of Delete Multiple Command: **`deletem`** `n/jia ling`*
 
 ### Deleting tags: `deletet`
+
 You can delete tags to a person in the contact book by `INDEX`. Alternatively, you can delete tags for everyone in the
 contact book by replacing `INDEX` with the word `all`.
 
 Format: **`deletet`** `INDEX [t/TAG]…​`
+
 * Delete tags of the person at the specified `INDEX`.
 * The index refers to the index number shown in the displayed person list.
 * Index must be provided and **must be a positive integer** 1, 2, 3, …​
@@ -376,12 +402,15 @@ Format: **`deletet`** `INDEX [t/TAG]…​`
 
 For example:
 
-* **`deletet`** `1 t/friend` followed by **`find`** `g/f` deletes the friend tag from the person at index 1 in the filtered list of female contacts.
-* **`deletet`** `2 t/teammate t/neighbour` deletes the teammate and neighbour tags from person at index 2 in the displayed person list.
-![result for 'deletet 2 t/teammate t/neighbour'](images/DeleteTags.png)
-*After execution of Delete Tag Command: **`deletet`** `2 t/teammate t/neighbour`*
+* **`deletet`** `1 t/friend` followed by **`find`** `g/f` deletes the friend tag from the person at index 1 in the
+  filtered list of female contacts.
+* **`deletet`** `2 t/teammate t/neighbour` deletes the teammate and neighbour tags from person at index 2 in the
+  displayed person list.
+  ![result for 'deletet 2 t/teammate t/neighbour'](images/DeleteTags.png)
+  *After execution of Delete Tag Command: **`deletet`** `2 t/teammate t/neighbour`*
 
 Alternatively, **`deletet`** `all [t/TAG]…​`
+
 * Delete tags of everybody in the list.
 * The tag refers to the tags to delete from everyone.
 * Existing tag will be removed if one of the input tags is the existing tag.
@@ -390,8 +419,10 @@ Alternatively, **`deletet`** `all [t/TAG]…​`
 
 For example:
 
-* **`deletet`** `all t/friend` followed by **`find`** `g/f` deletes the friend tag from all persons in the filtered list of female contacts.
-* **`deletet`** `all t/teammate t/neighbour` deletes the teammate and neighbour tags from all persons in the displayed person list.
+* **`deletet`** `all t/friend` followed by **`find`** `g/f` deletes the friend tag from all persons in the filtered list
+  of female contacts.
+* **`deletet`** `all t/teammate t/neighbour` deletes the teammate and neighbour tags from all persons in the displayed
+  person list.
 
 ### Clearing all persons: `clear`
 
@@ -412,15 +443,15 @@ You can find the specified persons using `KEYWORD`.
 Format: **`find`** `FIELD_PREFIX/KEYWORD [FIELD_PREFIX/KEYWORD]…​`
 
 * `FIELD_PREFIX/KEYWORD` can be any of the following:
-     * `n/NAME`
-     * `g/GENDER`
-     * `p/PHONE_NUMBER`
-     * `e/EMAIL`
-     * `nat/NATIONALITY`
-     * `tg/TUTORIAL_GROUP`
-     * `s/SOCIAL_HANDLE_USERID`
-     * `r/REMARK`
-     * `t/TAG`
+    * `n/NAME`
+    * `g/GENDER`
+    * `p/PHONE_NUMBER`
+    * `e/EMAIL`
+    * `nat/NATIONALITY`
+    * `tg/TUTORIAL_GROUP`
+    * `s/SOCIAL_HANDLE_USERID`
+    * `r/REMARK`
+    * `t/TAG`
 
 * At least one `KEYWORD` must be provided.
 * The `KEYWORD` is case-insensitive. (e.g `hans` will match `Hans`)
@@ -430,11 +461,11 @@ Examples:
 
 * **`find`** `n/Alex` returns `alex` and `Alexandra`.
 * **`find`** `n/jack tg/M12` returns `Jack` who are from tutorial group `M12`.<br>
-![result for 'find n/jack tg/M12'](images/FindJack.png)
-*After execution of Find Command: **`find`** `n/jack tg/M12`*
+  ![result for 'find n/jack tg/M12'](images/FindJack.png)
+  *After execution of Find Command: **`find`** `n/jack tg/M12`*
 * **`find`** `nat/Singaporean` returns all persons who are Singaporeans. <br>
-![result for 'find nat/Singaporean'](images/FindSingaporean.png)
-*After execution of Find Command: **`find`** `nat/Singaporean`*
+  ![result for 'find nat/Singaporean'](images/FindSingaporean.png)
+  *After execution of Find Command: **`find`** `nat/Singaporean`*
 
 ### Sorting all persons: `sort`
 
@@ -450,8 +481,8 @@ Examples:
 
 * **`sort`** `n/` sorts persons by name in ascending alphabetical order.
 * **`sort`** `tg/` sorts persons by tutorial group in ascending alphanumeric order.
-![result for 'sort tg/'](images/SortbyTutorialGroup.png)
-*After execution of Sort Command: **`sort`** `tg/`*
+  ![result for 'sort tg/'](images/SortbyTutorialGroup.png)
+  *After execution of Sort Command: **`sort`** `tg/`*
 
 ### Viewing statistics: `stat`
 
@@ -462,8 +493,8 @@ Format: **`stat`** `TUTORIAL_GROUP`
 Examples:
 
 * **`stat`** `T08` computes and shows the nationality statistics of tutorial group `T08`.
-![result for 'stat T08'](images/StatforT08.png)
-*After execution of Stat Command: **`stat`** `T08`*
+  ![result for 'stat T08'](images/StatforT08.png)
+  *After execution of Stat Command: **`stat`** `T08`*
 
 ### Importing contacts: `import`
 
@@ -475,9 +506,11 @@ Format: **`import`** `FILE_NAME.json`
 * File must be located in the `./data` directory in relative to the directory of `Socius.jar`.
 
 Examples:
-* **`import`** `groupmates.json` imports a contact book via a file named `groupmates.json` into your existing application.
-![Folder Directory for imported files](images/ImportExample.png)
-*Illustration of where the JSON file should be located*
+
+* **`import`** `groupmates.json` imports a contact book via a file named `groupmates.json` into your existing
+  application.
+  ![Folder Directory for imported files](images/ImportExample.png)
+  *Illustration of where the JSON file should be located*
 
 ### Exporting contacts: `export`
 
@@ -494,8 +527,8 @@ Examples:
 
 ### Aliasing commands: `alias`
 
-You can create command shortcut by aliasing it with custom `KEYWORD`. This will assign the `KEYWORD` to a particular `COMMAND`,
-so next time you can simply type in `KEYWORD` instead of the full `COMMAND`.
+You can create command shortcut by aliasing it with custom `KEYWORD`. This will assign the `KEYWORD` to a
+particular `COMMAND`, so next time you can simply type in `KEYWORD` instead of the full `COMMAND`.
 
 Format: **`alias`** `a/KEYWORD c/COMMAND`.
 
@@ -505,8 +538,8 @@ Format: **`alias`** `a/KEYWORD c/COMMAND`.
 Examples:
 
 * **`alias`** `a/Singaporeans c/find nat/Singaporean tg/T08` map the keyword `Singaporeans` to the stated command.
-![result for 'alias a/Singaporeans c/find nat/Singaporean tg/T08'](images/AliasSingaporeans.png)
-*After execution of Alias Command: **`alias`** `a/Singaporeans c/find nat/Singaporean tg/T08`*
+  ![result for 'alias a/Singaporeans c/find nat/Singaporean tg/T08'](images/AliasSingaporeans.png)
+  *After execution of Alias Command: **`alias`** `a/Singaporeans c/find nat/Singaporean tg/T08`*
 
 ### Exiting the program: `exit`
 
@@ -516,79 +549,94 @@ Format: **`exit`**
 
 ### Saving the data
 
-Socius data are automatically saved to the computer after any command that changes the data.
-Therefore, there is no need to save manually. The data will be automatically loaded back into the application the next time you use it.
+Socius data are automatically saved to the computer after any command that changes the data. Therefore, there is no need
+to save manually. The data will be automatically loaded back into the application the next time you use it.
 
 ### Command History
 
-Use up/down arrow keys to navigate through command history. This is useful if the command you are going to type only differs slightly from a command you have previously typed, or if you would like to revisit your previous commands.
+Use up/down arrow keys to navigate through command history. This is useful if the command you are going to type only
+differs slightly from a command you have previously typed, or if you would like to revisit your previous commands.
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Parameter Constraints
 
 ### `n/NAME`
+
 `NAME` should only contain alphanumeric characters and spaces.
 
 Example: `n/Zayden Tan Bee Hoon`
 
 ### `g/GENDER`
+
 `GENDER` can be `M` for male, `F` for female or `O` for others.
 
 Examples: `g/M`, `g/f`
 
 ### `p/PHONE_NUMBER`
+
 `PHONE_NUMBER` should only contain numbers, and it should be at least 3 digits long.
 
 Example: `98739283`
 
 ### `e/EMAIL`
+
 `EMAIL` should be of the format `local-part@domain` and adhere to the following constraints:
+
 * The local-part should only contain alphanumeric characters and these special characters: `+_.-`.
 * The local-part may not start or end with any special characters.
 * The domain name is made up of domain labels separated by periods.
 * The domain name must:
-     * end with a domain label at least 2 characters long
-     * have each domain label start and end with alphanumeric characters
-     * have each domain label consist of alphanumeric characters, separated only by hyphens, if any.
+    * end with a domain label at least 2 characters long
+    * have each domain label start and end with alphanumeric characters
+    * have each domain label consist of alphanumeric characters, separated only by hyphens, if any.
 
 Example: `e/e3029834@u.nus.edu`
 
 ### `nat/NATIONALITY`
-`NATIONALITY` is only valid if it is one of the nationality listed in this [list of nationalities TXT file](https://gist.github.com/marijn/274449).
+
+`NATIONALITY` is only valid if it is one of the nationality listed in
+this [list of nationalities TXT file](https://gist.github.com/marijn/274449).
 
 Example: `nat/Singaporean`
 
 ### `tg/TUTORIAL_GROUP`
+
 `TUTORIAL_GROUP` should only contain one letter that is either M/T/W/F followed by two digits.
 
 Example: `tg/T09`
 
 ### `s/SOCIAL_HANDLE`
+
 `SOCIAL_HANDLE` should be of the format `PLATFORM:USERID` and should adhere to the following constraints:
-* Only the following `PLATFORM` are supported: `Instagram`, `Telegram`, `Facebook`, `Twitter`, `Github`, `Linkedin`, `Snapchat`, `Discord`
+
+* Only the following `PLATFORM` are supported: `Instagram`, `Telegram`, `Facebook`, `Twitter`, `Github`, `Linkedin`
+  , `Snapchat`, `Discord`
 * The following 2 letter shorthand can be used to replace the full name of the social platform:
-     * `ig` for Instagram
-     * `tg` for Telegram
-     * `fb` for Facebook
-     * `tw` for Twitter
-     * `gh` for Github
-     * `ln` for Linkedin
-     * `sc` for Snapchat
-     * `dc` for Discord
+    * `ig` for Instagram
+    * `tg` for Telegram
+    * `fb` for Facebook
+    * `tw` for Twitter
+    * `gh` for Github
+    * `ln` for Linkedin
+    * `sc` for Snapchat
+    * `dc` for Discord
 * `USERID` should not contains whitespaces
 
 Example: `s/tg:alexx9384`
 
 ### `s/SOCIAL_HANDLE_USERID`
+
 `SOCIAL_HANDLE_USERID` is the `USERID` component of [`SOCIAL_HANDLE`](#ssocial-handle)
 
 ### `r/REMARK`
+
 `REMARK` can take any values.
 
 Example: `r/Stays in PGP`
 
 ### `t/TAG`
+
 `TAG` names should be alphanumeric.
 
 Example:  `t/friends`
@@ -599,11 +647,13 @@ Example: `t/friends:#FF0000` for a red colour tag
 </div>
 
 ### `a/ALIAS`
+
 `ALIAS` can take any values except keywords that are reserved for command names.
 
 Example: `a/findAlex`
 
 ### `c/COMMAND`
+
 `COMMAND` must be a valid command.
 
 Example: `c/find n/Alex`
@@ -611,13 +661,14 @@ Example: `c/find n/Alex`
 --------------------------------------------------------------------------------------------------------------------
 
 ## FAQ
+
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains
 the data of your previous Socius home folder.
 
 **Q**: Can I edit the data file directly?<br>
-**A**: Socius data are saved as a JSON file (i.e. `JAR_FILE_LOCATION/data/addressbook.json`).
-Advanced users are welcome to update data directly by editing that data file.
+**A**: Socius data are saved as a JSON file (i.e. `JAR_FILE_LOCATION/data/addressbook.json`). Advanced users are welcome
+to update data directly by editing that data file.
 
 <div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
 If the format of your data file is invalid, Socius will discard all data and start with an empty data file at the next run.
@@ -635,7 +686,8 @@ If the format of your data file is invalid, Socius will discard all data and sta
 
 ## Authors
 
-This User Guide is co-written by Hsiao Ting, Choon Yong, Kevin, Boon Kee and Nathan. We are a group of Computer Science students from the National University of Singapore, and members of AY2022S1-CS2103T-W08-4.
+This User Guide is co-written by Hsiao Ting, Choon Yong, Kevin, Boon Kee and Nathan. We are a group of Computer Science
+students from the National University of Singapore, and members of AY2022S1-CS2103T-W08-4.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -652,10 +704,12 @@ This User Guide is co-written by Hsiao Ting, Choon Yong, Kevin, Boon Kee and Nat
 
 | Command | Format | Examples |
 | --------- | ------------------- | ----------------------------------------------- |
-| **Add** | **`add`** `n/NAME [p/PHONE_NUMBER] [e/EMAIL] [nat/NATIONALITY] [g/GENDER] [tg/TUTORIAL GROUP] [s/SOCIALHANDLE]…​ [r/REMARK] [t/TAG]…​`| **`add`** `n/James Ho p/22224444 e/jamesho@example.com g/M tg/T12 s/tg:friendlyjames r/Friendly t/colleague`|
+| **
+Add** | **`add`** `n/NAME [p/PHONE_NUMBER] [e/EMAIL] [nat/NATIONALITY] [g/GENDER] [tg/TUTORIAL GROUP] [s/SOCIALHANDLE]…​ [r/REMARK] [t/TAG]…​`| **`add`** `n/James Ho p/22224444 e/jamesho@example.com g/M tg/T12 s/tg:friendlyjames r/Friendly t/colleague`|
 | **Addt** | **`addt`** `INDEX t/TAG [t/TAG]…​` or `all t/TAG [t/TAG]…​` | **`addt`** `1 t/friend t/teammate`|
 | **Remark** | **`remark`** `INDEX [r/REMARK]` | **`remark`** `2 r/She likes coding` |
-| **Edit** | **`edit`** `INDEX FIELD_PREFIX/VALUE [FIELD_PREFIX/VALUE]…​` | **`edit`** `1 s/tg:dogcatdonkey43 s/ig:applegrapeorange32 t/teammates e/wfeewf@gmail.com g/M nat/Singaporean` |
+| **
+Edit** | **`edit`** `INDEX FIELD_PREFIX/VALUE [FIELD_PREFIX/VALUE]…​` | **`edit`** `1 s/tg:dogcatdonkey43 s/ig:applegrapeorange32 t/teammates e/wfeewf@gmail.com g/M nat/Singaporean` |
 | **Delete** | **`delete`** `INDEX` | **`delete`** `3`|
 | **Deletet** | **`deletet`** `INDEX t/TAG [t/TAG]…​` or `all t/TAG [t/TAG]…​` | **`deletet`** `all t/teammate`|
 | **Deletem** | **`deletem`** `FIELD_PREFIX/KEYWORD [FIELD_PREFIX/KEYWORD]…​` | **`deletem`** `n/James g/f` |
@@ -677,7 +731,7 @@ This User Guide is co-written by Hsiao Ting, Choon Yong, Kevin, Boon Kee and Nat
 | **Import** | **`import`** | **`import`** `contactbook.json`|
 | **Export** | **`export`** | **`export`** `contactbook.json`|
 
-### Advance
+### Advanced
 
 | Command | Format | Examples |
 |---------|-------------------|-------------------------------------------------|
