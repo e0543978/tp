@@ -72,6 +72,7 @@ type fast, Socius can get your contact management tasks done faster than traditi
 </div>
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## Using this guide
 
@@ -629,6 +630,7 @@ If the format of your data file is invalid, Socius will discard all data and sta
 This User Guide is co-written by Hsiao Ting, Choon Yong, Kevin, Boon Kee and Nathan. We are a group of Computer Science students from the National University of Singapore, and members of AY2022S1-CS2103T-W08-4.
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## Command Summary
 
